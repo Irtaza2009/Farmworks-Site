@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmworks - Cozy Farming Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script
+      src="https://kit.fontawesome.com/e68f42c85a.js"
+      crossorigin="anonymous"
+    ></script>
+    >
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+      body {
+        font-family: "Pixelify Sans", sans-serif;
+      }
+      img {
+        object-fit: cover;
+      }
+      .bounce {
+        animation: bounce 1.5s infinite;
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(10px);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-teal-100 text-gray-900">
+    <!-- BG Section -->
+    <section
+      class="h-screen flex flex-col items-center justify-center bg-cover bg-center text-center relative"
+      style="
+        background-image: url('https://hc-cdn.hel1.your-objectstorage.com/s/v3/bf18aae83dab08c8086896ad44f58b7c31802acd_farm-main.png');
+      "
+    >
+      <a
+        href="#hero"
+        class="absolute bottom-10 text-4xl text-yellow-700 bounce"
+      >
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="h-screen flex flex-col items-center justify-center bg-cover bg-center text-center"
+    >
+      <h1 class="text-5xl font-bold text-yellow-700 drop-shadow-lg">
+        Farmworks
+      </h1>
+      <p class="mt-4 text-lg text-yellow-700">
+        Build Your Dream Farm, One Crop at a Time!
+      </p>
+      <a
+        href="https://irtaza.itch.io/farmworks"
+        target="_blank"
+        class="mt-6 px-6 py-3 bg-yellow-500 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-600"
+        >Play Now</a
+      >
+    </section>
+
+    <!-- Game Overview -->
+    <section class="py-16 text-center">
+      <h2 class="text-3xl font-bold">Game Overview</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg">
+        Plant crops, care for animals, and expand your farm in this cozy farming
+        game!
+      </p>
+      <div class="mt-8 flex justify-center gap-6">
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/54021de3a8fb9e867b13ff0ae81e2189e3f3dcf0_crop-scene.png"
+          class="w-40 h-40 rounded-lg shadow-md object-contain"
+        />
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/bfa9de6c30a3c54dec94fb00ff6d40a11f927735_chicken-scene.png"
+          class="w-40 h-40 rounded-lg shadow-md object-contain"
+        />
+        <img
+          src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/c3931fb1d4a8b60f16bce0fe81f9a33dc11b8ee0_cow-scene.png"
+          class="w-40 h-40 rounded-lg shadow-md object-contain"
+        />
+      </div>
+    </section>
+
+    <!-- Trailer Section -->
+    <section id="trailer" class="py-16 bg-white text-center">
+      <h2 class="text-3xl font-bold">Watch the Trailer</h2>
+      <div class="mt-6 flex justify-center">
+        <video class="w-full max-w-2xl h-30" controls>
+          <source
+            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/df1e9bb28c05adda6267e44c6f4a8a4d0d0bac62_farmworks-gameplay-trailer.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- How to Play -->
+    <section class="py-16 text-center">
+      <h2 class="text-3xl font-bold">How to Play</h2>
+      <ul class="mt-6 space-y-4 text-lg">
+        <li>🌱 Plant crops and watch them grow</li>
+        <li>🐔 Care for hens and collect eggs</li>
+        <li>🐄 Feed cows and collect milk</li>
+        <li>🚜 Expand your farm and trade goods</li>
+      </ul>
+    </section>
+
+    <!-- Social & Community -->
+    <section class="py-16 bg-gray-200 text-center">
+      <h2 class="text-3xl font-bold">Join the Community</h2>
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="#" class="text-blue-600 text-lg">Twitter</a>
+        <a href="#" class="text-purple-600 text-lg">Discord</a>
+        <a href="#" class="text-red-600 text-lg">YouTube</a>
+      </div>
+    </section>
+  </body>
+</html>
