@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Farmworks - Cozy Farming Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script
       src="https://kit.fontawesome.com/e68f42c85a.js"
       crossorigin="anonymous"
     ></script>
-
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
       body {
@@ -42,16 +40,17 @@
       "
     >
       <a
-        href="#hero"
-        class="absolute bottom-10 text-4xl text-yellow-700 bounce"
+        id="scrollDownHero"
+        class="absolute bottom-10 text-4xl text-yellow-700 bounce cursor-pointer"
       >
         <i class="fa-solid fa-chevron-down"></i>
       </a>
     </section>
+
     <!-- Hero Section -->
     <section
       id="hero"
-      class="h-screen flex flex-col items-center justify-center bg-cover bg-center text-center"
+      class="h-screen flex flex-col items-center justify-center text-center relative"
     >
       <h1 class="text-5xl font-bold text-yellow-700 drop-shadow-lg">
         Farmworks
@@ -63,12 +62,21 @@
         href="https://irtaza.itch.io/farmworks"
         target="_blank"
         class="mt-6 px-6 py-3 bg-yellow-500 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-600"
-        >Play Now</a
+        >Play Demo</a
       >
+      <a
+        id="scrollDownOverview"
+        class="absolute bottom-10 text-4xl text-yellow-700 bounce cursor-pointer"
+      >
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </section>
 
-    <!-- Game Overview -->
-    <section class="py-16 text-center">
+    <!-- Game Overview (Full Page) -->
+    <section
+      id="game-overview"
+      class="h-screen flex flex-col items-center justify-center text-center relative"
+    >
       <h2 class="text-3xl font-bold">Game Overview</h2>
       <p class="mt-4 max-w-2xl mx-auto text-lg">
         Plant crops, care for animals, and expand your farm in this cozy farming
@@ -88,10 +96,19 @@
           class="w-40 h-40 rounded-lg shadow-md object-contain"
         />
       </div>
+      <a
+        id="scrollDownTrailer"
+        class="absolute bottom-10 text-4xl text-gray-700 bounce cursor-pointer"
+      >
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </section>
 
-    <!-- Trailer Section -->
-    <section id="trailer" class="py-16 bg-white text-center">
+    <!-- Trailer Section (Full Page) -->
+    <section
+      id="trailer"
+      class="h-screen flex flex-col items-center justify-center text-center bg-white relative"
+    >
       <h2 class="text-3xl font-bold">Watch the Trailer</h2>
       <div class="mt-6 flex justify-center">
         <video class="w-full max-w-2xl h-30" controls>
@@ -102,10 +119,19 @@
           Your browser does not support the video tag.
         </video>
       </div>
+      <a
+        id="scrollDownHowToPlay"
+        class="absolute bottom-10 text-4xl text-gray-700 bounce cursor-pointer"
+      >
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </section>
 
-    <!-- How to Play -->
-    <section class="py-16 text-center">
+    <!-- How to Play (Full Page) -->
+    <section
+      id="how-to-play"
+      class="h-screen flex flex-col items-center justify-center text-center relative"
+    >
       <h2 class="text-3xl font-bold">How to Play</h2>
       <ul class="mt-6 space-y-4 text-lg">
         <li>🌱 Plant crops and watch them grow</li>
@@ -113,16 +139,69 @@
         <li>🐄 Feed cows and collect milk</li>
         <li>🚜 Expand your farm and trade goods</li>
       </ul>
+      <a
+        id="scrollDownCommunity"
+        class="absolute bottom-10 text-4xl text-yellow-600 bounce cursor-pointer"
+      >
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </section>
 
-    <!-- Social & Community -->
-    <section class="py-16 bg-gray-200 text-center">
+    <!-- Join the Community (Full Page) -->
+    <section
+      id="community"
+      class="h-screen flex flex-col items-center justify-center text-center bg-gray-200"
+    >
       <h2 class="text-3xl font-bold">Join the Community</h2>
       <div class="mt-6 flex justify-center gap-4">
-        <a href="#" class="text-blue-600 text-lg">Twitter</a>
+        <a
+          href="https://www.irtaza.xyz/portfolio/"
+          target="_blank"
+          class="text-blue-600 text-lg"
+          >Dev</a
+        >
         <a href="#" class="text-purple-600 text-lg">Discord</a>
         <a href="#" class="text-red-600 text-lg">YouTube</a>
       </div>
     </section>
+
+    <!-- JavaScript for Scrolling -->
+    <script>
+      document
+        .getElementById("scrollDownHero")
+        .addEventListener("click", function () {
+          document
+            .getElementById("hero")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+      document
+        .getElementById("scrollDownOverview")
+        .addEventListener("click", function () {
+          document
+            .getElementById("game-overview")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+      document
+        .getElementById("scrollDownTrailer")
+        .addEventListener("click", function () {
+          document
+            .getElementById("trailer")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+      document
+        .getElementById("scrollDownHowToPlay")
+        .addEventListener("click", function () {
+          document
+            .getElementById("how-to-play")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+      document
+        .getElementById("scrollDownCommunity")
+        .addEventListener("click", function () {
+          document
+            .getElementById("community")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
   </body>
 </html>
