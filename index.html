@@ -13,6 +13,7 @@
       @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
       body {
         font-family: "Pixelify Sans", sans-serif;
+        cursor: none;
       }
       img {
         object-fit: cover;
@@ -29,9 +30,27 @@
           transform: translateY(10px);
         }
       }
+      .community-link {
+        transition: color 0.3s;
+      }
+      .community-link:hover {
+        color: #f6b709;
+      }
+      .custom-cursor {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease-out;
+        background: url("cursor.png") no-repeat center;
+        background-size: cover;
+        z-index: 9999;
+      }
     </style>
   </head>
   <body class="bg-teal-100 text-gray-900">
+    <div class="custom-cursor" id="customCursor"></div>
     <!-- BG Section -->
     <section
       class="h-screen flex flex-col items-center justify-center bg-cover bg-center text-center relative"
@@ -157,16 +176,29 @@
         <a
           href="https://www.irtaza.xyz/portfolio/"
           target="_blank"
-          class="text-blue-600 text-lg"
+          class="text-blue-600 text-lg community-link"
           >Dev</a
         >
-        <a href="#" class="text-purple-600 text-lg">Discord</a>
-        <a href="#" class="text-red-600 text-lg">YouTube</a>
+        <a href="#" class="text-purple-600 text-lg community-link">Discord</a>
+        <a href="#" class="text-red-600 text-lg community-link">YouTube</a>
       </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-yellow-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-yellow-600"
+    >
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
     <!-- JavaScript for Scrolling -->
     <script>
+      document
+        .getElementById("backToTop")
+        .addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
       document
         .getElementById("scrollDownHero")
         .addEventListener("click", function () {
@@ -203,5 +235,29 @@
             .scrollIntoView({ behavior: "smooth" });
         });
     </script>
+    <script>
+      const customCursor = document.getElementById("customCursor");
+
+      // Update cursor position on mouse move
+      document.addEventListener("mousemove", (e) => {
+        customCursor.style.left = `${e.clientX}px`;
+        customCursor.style.top = `${e.clientY + window.scrollY}px`;
+      });
+
+      // Ensure cursor stays in place when scrolling
+      document.addEventListener("scroll", () => {
+        customCursor.style.top = `${
+          parseInt(customCursor.style.top) + window.scrollY
+        }px`;
+      });
+    </script>
   </body>
 </html>
+
+<!--
+// music 
+// dark mode
+// themed cursor-pointer: tick
+// back to home button: tick
+// hover animation for social buttons: tick
+-->
